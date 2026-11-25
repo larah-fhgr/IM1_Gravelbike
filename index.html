@@ -5,9 +5,98 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<body>
-<h1>Mein Gravelbike</h1>
+<body data-theme="light">
+<header>
+    <nav class="hauptnav">
+        <img src="img/logo.svg" alt="Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="ueber-mich.html">Impressum</a></li>
+            <button id="toggle-theme">Theme wechseln</button>
+        </ul>
+    </nav>
+    <div class="headerbild">
+        <h1>GRAVELBIKE</h1>
+    </div>
+</header>
+<main>
+    <section class="bike-diagram">
+        <img class="bike-img" src="img/Gravelbike.png" alt="Gravelbike">
+
+        <!-- Linien: gleiches Koordinatensystem für alle Linien -->
+        <svg class="bike-lines" viewBox="0 0 1700 1250" aria-hidden="true">
+            <line x1="333"  y1="118" x2="619"  y2="272"/>  <!-- Sattel -->
+            <line x1="1085" y1="145" x2="1016" y2="322"/>  <!-- Lenker -->
+            <line x1="489"  y1="887" x2="776"  y2="702"/>  <!-- Kette -->
+            <line x1="775"  y1="851" x2="874"  y2="687"/>  <!-- Pedal -->
+            <line x1="1242" y1="908" x2="1205" y2="794"/>  <!-- Rad -->
+        </svg>
+
+        <div class="label label--sattel">
+            <h3>Sattel</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        </div>
+        <div class="label label--lenker">
+            <h3>Lenker</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        </div>
+        <div class="label label--kette">
+            <h3>Kette</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        </div>
+        <div class="label label--pedal">
+            <h3>Pedal</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        </div>
+        <div class="label label--rad">
+            <h3>Rad</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        </div>
+    </section>
+    <section class="card-wrapper">
+        <article>
+            <img src="img/route-1.jpg" alt="route1">
+            <h3>Route 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reprehenderit odit sequi tempor fugiat mollitia
+                tempor explicabo tempor enim id qui. Mollit vitae excepteur ullamco adipiscing explicabo eiusmod deserunt at.
+                Quisquam inventore irure veritatis incididunt dolor iusto commodo aliquip reprehenderit corrupti. Deserunt illo
+                ullamco architecto quia. Accusamus non vero sunt sequi. Quasi incididunt ad iusto officia. Ex illo nostrud labore
+                magnam.</p>
+            <a href="#">Mehr erfahren</a>
+        </article>
+        <article>
+            <img src="img/route-2.jpg" alt="route2">
+            <h3>Route 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reprehenderit odit sequi tempor fugiat mollitia
+                tempor explicabo tempor enim id qui. Mollit vitae excepteur ullamco adipiscing explicabo eiusmod deserunt at.
+                Quisquam inventore irure veritatis incididunt dolor iusto commodo aliquip reprehenderit corrupti. Deserunt illo
+                ullamco architecto quia. Accusamus non vero sunt sequi. Quasi incididunt ad iusto officia. Ex illo nostrud labore
+                magnam.</p>
+            <a href="#">Mehr erfahren</a>
+        </article>
+        <article>
+            <img src="img/route-3.jpg" alt="route3">
+            <h3>Route 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reprehenderit odit sequi tempor fugiat mollitia
+                tempor explicabo tempor enim id qui. Mollit vitae excepteur ullamco adipiscing explicabo eiusmod deserunt at.
+                Quisquam inventore irure veritatis incididunt dolor iusto commodo aliquip reprehenderit corrupti. Deserunt illo
+                ullamco architecto quia. Accusamus non vero sunt sequi. Quasi incididunt ad iusto officia. Ex illo nostrud labore
+                magnam.</p>
+            <a href="#">Mehr erfahren</a>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>©2026 | Lara Häusermann</p>
+
+    </div>
+</footer>
+<script src="js/theme-toggle.js"></script>
 </body>
 </html>

@@ -1,0 +1,230 @@
+/*muss man mit font-face machen schrift einbinden*/
+@font-face {
+    font-family: "Darker Grotesque";
+    src:
+            url("../fonts/DarkerGrotesque-VariableFont_wght.woff2") format("woff2");
+}
+
+:root{
+    /*Falls ich Farben ändern möchte später ohne überall das manuell anzupassen kann ich Variabeln verändern.
+    Wenn ich an der Variabel die Farbe ändere ändert sie sich überall wo die Variabel drinnen ist. Eine Variable
+    beginnt immer mit --*/
+    --color-primary: #FAF4E9;
+    --color-secondary:#DDD9CE;
+    --text-color:#3C2415;
+    --text-color-secondary:#704327;
+    --global-max-width:1200px;
+
+
+}
+
+/*mit option 5 bekommt man die eckigen Klammern,*/
+[data-theme="dark"]{
+    --color-primary: #704327;
+    --color-secondary: #3C2415;
+    --text-color: #FAF4E9;
+    --text-color-secondary: #DDD9CE;
+}
+
+
+/*Stern ist dafür für alle Elemente auszuwählen*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color:var(--color-primary);}
+
+header{
+    background-color:var(--color-secondary);
+}
+
+h1{
+    color: #FAF4E9;
+}
+.hauptnav{
+    /*Flexbox fängt immer mit display:flex an*/
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+    max-width: var(--global-max-width);
+    /*0 ist oben und unten und auto ist rechts und links, Margin mittet hier so das logo und die nav ein*/
+    margin: 0 auto;
+
+
+    img{
+        width: 80%;
+        justify-self: start;
+    }
+
+    ul{
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 20px;
+        font-family: "Darker Grotesque", sans-serif;
+    }
+
+}
+
+#toggle-theme{
+    background-color: var(--text-color);
+    color: var(--color-secondary);
+    border-radius: 10px;
+    border-style: none;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.headerbild{
+    background-image: url("../img/headerbild.jpeg");
+    height: 500px;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        font-family: "Darker Grotesque";
+
+    }
+}
+
+main{
+    background-color: var(--color-primary);
+    max-width: var(--global-max-width);
+    margin: 0 auto;
+
+    h2{
+        font-family: "Darker Grotesque", sans-serif;
+        color: var(--text-color);
+    }
+    p{
+        font-family: "Darker Grotesque", sans-serif;
+        color: var(--text-color);
+    }
+}
+
+/*section um das ganze*/
+.bike-diagram{
+    position: relative;               /* Bezugspunkt für alles Absolute */
+    aspect-ratio: 1700 / 1250;        /* gleiches Verhältnis wie das SVG-viewBox */
+    margin: 40px 0;
+}
+
+/*Gravelbike Bild*/
+.bike-img{
+    position: absolute;
+    left: 22%;      /* (100 - 56) / 2 */
+    top: 20.6%;
+    width: 56%;
+}
+
+/* */
+.bike-lines{
+    position: absolute;
+    inset: 0;                         /* top/right/bottom/left = 0 */
+    width: 100%;
+    height: 100%;
+
+    line{
+        stroke: var(--text-color);
+        stroke-width: 1.5;
+        vector-effect: non-scaling-stroke; /* Linie bleibt gleich dünn beim Skalieren */
+    }
+}
+
+.label{
+    position: absolute;
+    width: 20%;
+
+    h3{
+        font-family: "Darker Grotesque";
+        color: var(--text-color);
+
+    }
+    p{
+        line-height: 1.7;
+    }
+}
+
+/* linksbündige Texte: left, rechtsbündige: right + text-align */
+.label--sattel{ right: 82%;   top: 7.5%;  text-align: right; }
+.label--kette { right: 72.5%; top: 71%;   text-align: right; }
+.label--lenker{ left: 65%;    top: 9.5%; }
+.label--pedal { left: 46.8%;  top: 70.5%; }
+.label--rad   { left: 74.4%;  top: 72%; }
+
+/* Mobile: Linien weg, Texte untereinander */
+@media (max-width: 768px){
+    .bike-diagram{
+        aspect-ratio: auto;
+    }
+}
+
+section{
+    margin: 40px 0;
+}
+
+.card-wrapper{
+    display:grid;
+    /*drei einheiten getrennt mit abstand fr ist frection jede abteilung bekommt ein fr */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+
+    article{
+        /*Wenn man auf das Farbfeld links neben dem Code drauf klickt, kann man die Farbe automatisch wählen mit einer Pipette
+        und einem Regler*/
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        border-radius: 20px;
+        background-color:var(--text-color-secondary);
+        color: #FAF4E9;
+        font-family: "Darker Grotesque";
+        p{
+            color: #FAF4E9;
+        }
+        img{
+            align-items: center;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            aspect-ratio: 2 / 1;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+footer{
+    background-color: var(--color-secondary);
+    padding: 20px 0;
+
+    .footer-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: var(--global-max-width);
+        margin: 0 auto;
+        color: var(--footer-text-color);
+
+    }
+}
+
+/*macht man immer zu unterst, damit man sich sicher sein kann, dass nur das dann das ist was man für die Mobile
+Version will*/
+
+@media (max-width: 768px){
+    .hauptnav{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
